@@ -1,0 +1,13 @@
+{{name}}
+<!-- image -->
+<img (dblclick)="onImageClick()"  src="https://upload.wikimedia.org/wikipedia/commons/3/34/Red_star.svg"
+height="42" width="42">
+<br>
+<h2 [hidden]="hide">Look at the star.</h2>
+<br>
+<button (click)="onClickButton()">Press me!</button>
+<!-- Press button counter -->
+<p>The number of times the button has been pressed is: {{count}}</p>
+<hr>
+<!-- list component -->
+<app-list-component>  </app-list-component>

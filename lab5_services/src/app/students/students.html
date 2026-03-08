@@ -1,1 +1,8 @@
 <p>students works!</p>
+{{getStudents()}}
+
+<ol>
+    @for (item of getStudents(); track $index) {
+        <li>{{item.name}}</li>
+    }
+</ol>

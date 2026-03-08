@@ -1,8 +1,26 @@
-<p>students works!</p>
-{{getStudents()}}
+<div class="section">
+  <h1>Students</h1>
 
-<ol>
-    @for (item of getStudents(); track $index) {
-        <li>{{item.name}}</li>
-    }
-</ol>
+  <!-- Loading state -->
+  <p *ngIf="loading" class="loading">Loading student data...</p>
+  Loading: {{loading}} <br>
+
+  <!-- Error state -->
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <!-- School info -->
+  <div *ngIf="schoolData && !loading" class="school-info">
+    <p class="school-meta">{{ schoolData.School }} — {{ schoolData.Address }}</p>
+  </div>
+
+  <!-- Student list -->
+  <ol *ngIf="schoolData.students.length > 0 && !loading">
+    <li *ngFor="let student of schoolData.students">
+      <span class="student-id">{{ student.id }}</span>,
+      <span class="student-name">{{ student.name }}</span>,
+      <span class="student-address">{{ student.address }}</span>,
+      Age: {{ student.age }},
+      Course: <span class="student-course">{{ student.course }}</span>
+    </li>
+  </ol>
+</div>

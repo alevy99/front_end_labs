@@ -1,20 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SchoolData } from '../models/student';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StudentService {
+
+  private apiUrl = 'https://api.jsonblob.com/019cce09-7169-7b60-920c-1ffb7a09b6c4';
   
   constructor(public httpClient: HttpClient) {}
 
-  getStudentData() {
-    return [
-      { id: 1, name: 'John Doe', age: 20 },
-      { id: 2, name: 'Jane Smith', age: 22 },
-      { id: 3, name: 'Michael Johnson', age: 19 },
-    ];
+  getStudents(): Observable<SchoolData> {
+    return this.httpClient.get<SchoolData>(this.apiUrl);
   }
 
 }

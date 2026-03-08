@@ -1,1 +1,18 @@
-<p>weather works!</p>
+<div class="section">
+    <h1>Weather in Galway</h1>
+
+    <!-- Loading state -->
+    <p *ngIf="loading" class="loading">Loading weather data...</p>
+
+    <!-- Error state -->
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+    <!-- Weather data -->
+    <div *ngIf="weatherData && !loading">
+
+        <p class="weather-description">
+            {{weatherData.weather[0].main}}, {{ weatherData.weather[0].description }}
+        </p>
+    </div>
+    
+</div>

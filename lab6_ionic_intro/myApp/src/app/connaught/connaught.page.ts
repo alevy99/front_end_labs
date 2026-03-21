@@ -11,6 +11,8 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonBackButton, 
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonImg, IonList, IonItem]
 })
 export class ConnaughtPage implements OnInit {
+
+  // Array of Connaught provinces
   provinces: any[] = [
     { name: 'Galway' },
     { name: 'Mayo' },  

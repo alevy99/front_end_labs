@@ -13,9 +13,11 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class LeinsterPage implements OnInit {
 
+  // Inject the Router service to enable navigation
   constructor(private router: Router) {
   }
 
+  // Navigate to the Leinster counties page
   showLeinsterCounties() {
     this.router.navigate(['/leinster-counties']);
   }

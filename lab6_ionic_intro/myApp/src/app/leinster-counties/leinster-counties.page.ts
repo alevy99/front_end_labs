@@ -11,6 +11,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonList, IonItem]
 })
 export class LeinsterCountiesPage implements OnInit {
+  // Array of Leinster counties
   counties: any[] = [
     { name: 'Dublin' },
     { name: 'Kildare' },
